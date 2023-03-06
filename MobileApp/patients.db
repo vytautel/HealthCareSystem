@@ -1,0 +1,10 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "patients" (
+	"id"	int(10) NOT NULL,
+	"name"	varchar(256) NOT NULL,
+	"surname"	varchar(256) NOT NULL,
+	"email"	varchar(256) NOT NULL
+);
+INSERT INTO "patients" ("id","name","surname","email") VALUES (1,'Petras','Petrelis','petraspetrelis@gmail.com'),
+ (2,'Lina','Linaitė','linauskaitiene82@gmail.com');
+COMMIT;

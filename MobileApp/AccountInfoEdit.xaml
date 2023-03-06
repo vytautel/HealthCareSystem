@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Mano duomenų atnaujinimas"
+             x:Class="MobileApp.AccountInfoEdit">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <!-- Our main structure -->
+            <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,*" Padding="0,40,0,20">
+
+                <Grid Grid.Row="0" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Frame Grid.Row="0" Grid.Column="0"
+                       Padding="0"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       CornerRadius="100"
+                       HeightRequest="70"
+                       WidthRequest="70">
+                        <Image Source="Account.png"/>
+                    </Frame>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.ColumnSpan="2" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Row="1">
+                        <Label Grid.Column ="0" x:Name ="patientName" FontAttributes="Bold" FontSize="26" 
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="EndAndExpand" />
+                        <Label  Grid.Column ="1"  x:Name ="patientSurname" FontAttributes="Bold" FontSize="26" 
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="StartAndExpand" />
+                    </Grid>
+                    <Grid Grid.Row="2" Grid.Column="0">
+                        <Label FontAttributes="Bold" FontSize="22"
+                        VerticalOptions="CenterAndExpand" Text ="Gimimo data:"
+                        HorizontalOptions="StartAndExpand" Margin="20,10,0,0"/>
+                        <Label Grid.Column="1" x:Name ="patientBirthDate" FontAttributes="Bold" FontSize="22"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="EndAndExpand" Margin="0,20,20,10"/>
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Label FontAttributes="Bold" FontSize="22"
+                        VerticalOptions="CenterAndExpand" Text ="El. paštas:"
+                        HorizontalOptions="StartAndExpand" Margin="20,10,0,0"/>
+                        <Entry x:Name ="patientEmail" FontAttributes="Bold" FontSize="22" 
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="EndAndExpand" Margin="0,20,20,10" />
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Label FontAttributes="Bold" FontSize="22"
+                        VerticalOptions="CenterAndExpand" Text ="Adresas:"
+                        HorizontalOptions="StartAndExpand" Margin="20,10,0,0"/>
+                        <Entry x:Name ="patientAdress" FontAttributes="Bold" FontSize="22" 
+                        VerticalOptions="CenterAndExpand"  
+                        HorizontalOptions="EndAndExpand" Margin="0,20,20,10"/>
+                    </Grid>
+                    <Grid Grid.Row="5">
+                        <Label FontAttributes="Bold" FontSize="22"
+                        VerticalOptions="CenterAndExpand" Text ="Tel.nr.:"
+                        HorizontalOptions="StartAndExpand" Margin="20,10,0,0"/>
+                        <Entry x:Name ="patientPhone" FontAttributes="Bold" FontSize="22" 
+                        VerticalOptions="CenterAndExpand"  
+                        HorizontalOptions="EndAndExpand" Margin="0,20,20,10"/>
+                    </Grid>
+                </Grid>
+
+                <!-- Buttons-->
+                <Button Grid.Row="5" Grid.Column="1" Text="Saugoti" HeightRequest="50" 
+                        FontAttributes="Bold" BorderColor="#1e40ff" BorderWidth="1" 
+                        TextColor="#1e40ff" BackgroundColor="Transparent" FontSize="18" 
+                        Margin="20,20,20,20" x:Name="SavePatient" Clicked="SavePatient_Clicked"
+                        />
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

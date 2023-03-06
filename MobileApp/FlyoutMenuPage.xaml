@@ -8,10 +8,10 @@
         <ListView x:Name="listview" x:FieldModifier="public">
             <ListView.ItemsSource>
                 <x:Array Type="{x:Type local:FlyoutItemPage}">
-                    <local:FlyoutItemPage Title="Namai" IconSource="Dashboard.png" TargetPage="{x:Type local:HomePage}"/>
+                    <local:FlyoutItemPage Title="Namai" IconSource="Home.png" TargetPage="{x:Type local:HomePage}"/>
                     <local:FlyoutItemPage Title="Suvestinė" IconSource="Dashboard.png" TargetPage="{x:Type local:Dashboard}"/>
-                    <local:FlyoutItemPage Title="Mano paskyra" IconSource=" Icons\\Account.png" TargetPage="{x:Type local:AccountInfo}"/>
-                    <local:FlyoutItemPage Title="Mano duomenys" IconSource="..\\PatientInfo.png" TargetPage="{x:Type local:PatientInfo}"/>
+                    <local:FlyoutItemPage Title="Mano paskyra" IconSource="Account.png" TargetPage="{x:Type local:AccountInfo}"/>
+                    <local:FlyoutItemPage Title="Mano duomenys" IconSource="PatientInfo.png" TargetPage="{x:Type local:PatientInfo}"/>
                 </x:Array>
             </ListView.ItemsSource>
             <ListView.ItemTemplate>
@@ -22,7 +22,7 @@
                                 <ColumnDefinition Width="33"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Image Source="{Binding IconSource}"/>
+                            <Image Source="{Binding IconSource}" Margin="5"/>
                             <Label Grid.Column ="1" Text="{Binding Title}"
                                    VerticalOptions="Center"/>
                         </Grid>

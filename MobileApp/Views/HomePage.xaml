@@ -1,11 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             Title="Mano duomenys"
-             x:Class="MobileApp.PatientInfo">
+             Title="Namai"
+             x:Class="MobileApp.HomePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Patient Info"
+
+            <Entry Placeholder="Simptomas" Text="{Binding SymptomName}"></Entry>
+            <Button Text="Pridėti" Command="{Binding AddSymptomCommand}"></Button>
+            
+            <Label Text="Welcome to Home PAGE"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
