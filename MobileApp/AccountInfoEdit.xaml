@@ -48,25 +48,31 @@
                         <Label FontAttributes="Bold" FontSize="22"
                         VerticalOptions="CenterAndExpand" Text ="El. paštas:"
                         HorizontalOptions="StartAndExpand" Margin="20,10,0,0"/>
-                        <Entry x:Name ="patientEmail" FontAttributes="Bold" FontSize="22" 
-                        VerticalOptions="CenterAndExpand" 
-                        HorizontalOptions="EndAndExpand" Margin="0,20,20,10" />
+
+                        <Entry Grid.Column="1" x:Name ="patientEmail" FontAttributes="Bold" FontSize="22" 
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="End"
+                        HorizontalOptions="Fill" Margin="0,20,20,10"/>
                     </Grid>
                     <Grid Grid.Row="4">
                         <Label FontAttributes="Bold" FontSize="22"
                         VerticalOptions="CenterAndExpand" Text ="Adresas:"
                         HorizontalOptions="StartAndExpand" Margin="20,10,0,0"/>
-                        <Entry x:Name ="patientAdress" FontAttributes="Bold" FontSize="22" 
-                        VerticalOptions="CenterAndExpand"  
-                        HorizontalOptions="EndAndExpand" Margin="0,20,20,10"/>
+
+                        <Entry x:Name ="patientAdress" Grid.Column="1"  FontAttributes="Bold" FontSize="22" 
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalTextAlignment="End"
+                        HorizontalOptions="Fill"   Margin="0,20,20,10"/>
                     </Grid>
                     <Grid Grid.Row="5">
                         <Label FontAttributes="Bold" FontSize="22"
                         VerticalOptions="CenterAndExpand" Text ="Tel.nr.:"
                         HorizontalOptions="StartAndExpand" Margin="20,10,0,0"/>
-                        <Entry x:Name ="patientPhone" FontAttributes="Bold" FontSize="22" 
+
+                        <Entry Grid.Column="1"  x:Name ="patientPhone" FontAttributes="Bold" FontSize="22" 
                         VerticalOptions="CenterAndExpand"  
-                        HorizontalOptions="EndAndExpand" Margin="0,20,20,10"/>
+                        HorizontalTextAlignment="End"
+                        HorizontalOptions="Fill" Margin="0,20,20,10"/>
                     </Grid>
                 </Grid>
 

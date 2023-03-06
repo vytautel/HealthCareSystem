@@ -39,13 +39,7 @@ namespace MobileApp
 
             int number_updated = await App.MyDatabase.UpdatePatient(patient);
 
-            Console.WriteLine(number_updated);
-
-            // neveikia
-         //   await Shell.Current.Navigation.PopAsync();
-            //  App.Current.MainPage.Navigation.PushAsync(new AccountInfo());
-           // await Navigation.PushAsync(AccountInfoPage);
-            //await Shell.Current.GoToAsync("..");
+            await Navigation.PopAsync(); 
         }
     }
 }
