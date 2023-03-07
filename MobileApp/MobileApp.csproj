@@ -30,6 +30,9 @@
     <Reference Include="Mono.Android">
       <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v11.0\Mono.Android.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.AndroidX.CardView">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft\Xamarin\NuGet\xamarin.androidx.cardview\1.0.0.6\lib\monoandroid90\Xamarin.AndroidX.CardView.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

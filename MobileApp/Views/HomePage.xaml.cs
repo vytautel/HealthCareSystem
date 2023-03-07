@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MobileApp.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +17,17 @@ namespace MobileApp
         {
             InitializeComponent();
         }
+
+        private void OnAddSymptomClicked(object sender, EventArgs e)
+        {
+            var newElement = new SymptomCard
+            {
+                Title = "Card Title added", 
+                Body = "Card Body Text added"
+            };
+
+            pageView.Children.Add(newElement);
+        }
+
     }
 }

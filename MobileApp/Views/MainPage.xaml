@@ -10,7 +10,7 @@
     <FlyoutPage.Detail>
         <NavigationPage>
             <x:Arguments>
-                <local:Dashboard/>
+                <local:HomePage/>
             </x:Arguments>
         </NavigationPage>
     </FlyoutPage.Detail>

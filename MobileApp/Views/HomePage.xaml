@@ -2,16 +2,34 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Namai"
+             xmlns:local="clr-namespace:MobileApp.Components"
              x:Class="MobileApp.HomePage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout >
+
+
+            <Label  Grid.Column ="1"  x:Name ="patientSurname" FontAttributes="Bold" FontSize="22" 
+                    Text="Trumpa savaitės simptomų suvestinė"
+                        VerticalOptions="Start" 
+                        HorizontalOptions="Center" />
+
+            <Button Text="Pridėti simptomą" Clicked="OnAddSymptomClicked" />
+
+            <StackLayout x:Name="pageView">
+                <local:SymptomCard Title="Card Title" Body="Card Body Text" />
+            <local:SymptomCard Title="Card Title" Body="Card Body Text" />
+            <local:SymptomCard Title="Card Title" Body="Card Body Text" />
+                <local:SymptomCard Title="Card Title" Body="Card Body Text" />
+            </StackLayout>
+
+            <!-- Dažniausias simptomas -->
+            <!-- Stipriausias simptomas -->
+            <!-- Ilgiausias besitęsiantis simptomas -->
+            <!-- Viso skirtingų simptomų šią savaitę -->
 
             <Entry Placeholder="Simptomas" Text="{Binding SymptomName}"></Entry>
             <Button Text="Pridėti" Command="{Binding AddSymptomCommand}"></Button>
             
-            <Label Text="Welcome to Home PAGE"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
