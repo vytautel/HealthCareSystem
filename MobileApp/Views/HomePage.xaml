@@ -5,7 +5,8 @@
              xmlns:local="clr-namespace:MobileApp.Components"
              x:Class="MobileApp.HomePage">
     <ContentPage.Content>
-        <StackLayout >
+        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout HorizontalOptions="FillAndExpand"  >
 
 
             <Label  Grid.Column ="1"  x:Name ="patientSurname" FontAttributes="Bold" FontSize="22" 
@@ -13,23 +14,29 @@
                         VerticalOptions="Start" 
                         HorizontalOptions="Center" />
 
-            <Button Text="Pridėti simptomą" Clicked="OnAddSymptomClicked" />
+                <Button Text="Pridėti simptomą" Clicked="OnAddSymptomClicked" />
 
-            <StackLayout x:Name="pageView">
-                <local:SymptomCard Title="Card Title" Body="Card Body Text" />
-            <local:SymptomCard Title="Card Title" Body="Card Body Text" />
-            <local:SymptomCard Title="Card Title" Body="Card Body Text" />
-                <local:SymptomCard Title="Card Title" Body="Card Body Text" />
-            </StackLayout>
 
-            <!-- Dažniausias simptomas -->
+                <ScrollView VerticalOptions="FillAndExpand">
+                        <!-- Dynamic elements -->
+                    <StackLayout x:Name="SymptomCardsLayout" VerticalOptions="FillAndExpand">
+
+                        <local:SymptomCard Title="Card Title" Body="Card Body Text" />
+                    </StackLayout>
+
+                </ScrollView>
+
+                <!-- Dažniausias simptomas -->
             <!-- Stipriausias simptomas -->
             <!-- Ilgiausias besitęsiantis simptomas -->
             <!-- Viso skirtingų simptomų šią savaitę -->
 
-            <Entry Placeholder="Simptomas" Text="{Binding SymptomName}"></Entry>
+              <!--  <ListView x:Name="myListView" /> -->
+
+                <Entry Placeholder="Simptomas" Text="{Binding SymptomName}"></Entry>
             <Button Text="Pridėti" Command="{Binding AddSymptomCommand}"></Button>
-            
-        </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
