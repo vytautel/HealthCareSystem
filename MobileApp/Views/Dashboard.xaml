@@ -6,9 +6,13 @@
     <ContentPage.Content>
         <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" >
-            <Label Text="Dashboard"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                <Label Text="Dashboard"/>
+                <Label Text="Dashboard"/>
+                <Label Text="Dashboard"/>
+                <Label Text="Dashboard"/>
+
+                
+
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

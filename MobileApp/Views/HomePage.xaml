@@ -20,7 +20,6 @@
                 <ScrollView VerticalOptions="FillAndExpand">
                         <!-- Dynamic elements -->
                     <StackLayout x:Name="SymptomCardsLayout" VerticalOptions="FillAndExpand">
-
                         <local:SymptomCard Title="Card Title" Body="Card Body Text" />
                     </StackLayout>
 
