@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Namai"
              xmlns:local="clr-namespace:MobileApp.Components"
+             xmlns:Control="clr-namespace:MobileApp.Control"
              x:Class="MobileApp.HomePage">
     <ContentPage.Content>
         <ContentView>
@@ -26,8 +27,8 @@
                         <!-- Dynamiclly added symptom cards -->
                         <StackLayout x:Name="SymptomCardsLayout"
                                      VerticalOptions="FillAndExpand">
-                            <local:SymptomCard Title="Card Title"
-                                               Body="Card Body Text" />
+                            <Control:SymptomCard Title="Card Title"
+                                               Icon="Card Body Icon" />
                         </StackLayout>
                     </ScrollView>
 

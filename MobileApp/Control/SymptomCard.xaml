@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileApp.Control.SymptomCard">
+    <Frame CornerRadius="8">
+        <Grid RowDefinitions="2*,*">
+            <Image Grid.Row="0"
+                   Source="{Binding Icon}"
+                   WidthRequest="80"
+                   HeightRequest="5" />
+            <Label Grid.Row="1"
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Text="{Binding Title}" />
+        </Grid>
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer Tapped="SymptomTapEvent" />
+        </Frame.GestureRecognizers>
+    </Frame>
+
+</ContentView>

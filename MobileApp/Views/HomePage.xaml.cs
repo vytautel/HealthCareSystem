@@ -2,6 +2,7 @@
 using Android.Views;
 using Android.Widget;
 using MobileApp.Components;
+using MobileApp.Control;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -31,24 +32,10 @@ namespace MobileApp
             var newElement = new SymptomCard
             {
                 Title = "Card Title added",
-                Body = "Card Body Text added"
+                Icon = "Card Body Icon added"
             };
 
             SymptomCardsLayout.Children.Add(newElement);
-
-            /* newElement.ButtonClickedCommand = new Command(() => {
-                 // Handle button click
-             });*/
-            // stringa baisiai
-            //cardItems.Add(newElement);
-
-            // Add the new button to the layout
-            //  myListView.Add(newElement);
-
-            // SymptomCards.FullScroll(FocusSearchDirection.Down);
-
-
         }
-
     }
 }
