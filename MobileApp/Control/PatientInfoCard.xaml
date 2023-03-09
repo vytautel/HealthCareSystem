@@ -1,31 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileApp.Control.PatientInfoCard">
 
-   <!-- <ContentView.Content>
-        <Button Image="{Binding Icon}" Text="{Binding Title}" Clicked="ClickEvent" HeightRequest="10"  WidthRequest="10" />
-
-
-        <StackLayout Margin="0" BackgroundColor="gray">
-            <Grid>
-                <Image Grid.Column="0" Grid.Row="0" Source="{Binding Icon}" VerticalOptions="Center" />
-                <Label Grid.Column="0" Grid.Row="1" Text="{Binding Title}" FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
-            </Grid>
-        </StackLayout>
-    </ContentView.Content>-->
-
-    <StackLayout>
-        <ImageButton Source="{Binding Icon}"
-                    HorizontalOptions="Center"
-                    VerticalOptions="CenterAndExpand"
-                     HeightRequest="100"/>
-
-        <Label Text="{Binding Title}"
-               FontSize="22"
-               FontAttributes="Bold"
-               HorizontalOptions="Center" />
-
-    </StackLayout>
+    <Frame CornerRadius="8">
+        <Grid RowDefinitions="2*,*">
+            <Image Grid.Row="0"
+                   Source="{Binding Icon}"
+                   WidthRequest="80"
+                   HeightRequest="5" />
+            <Label Grid.Row="1"
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Text="{Binding Title}" />
+        </Grid>
+        <Frame.GestureRecognizers>
+            <TapGestureRecognizer Tapped="ClickEvent" />
+        </Frame.GestureRecognizers>
+    </Frame>
 
 </ContentView>

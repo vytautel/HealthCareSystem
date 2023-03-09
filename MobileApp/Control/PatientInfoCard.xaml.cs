@@ -44,11 +44,27 @@ namespace MobileApp.Control
             BindingContext = this;
         }
 
-        private void ClickEvent(object sender, EventArgs e)
+        async private void ClickEvent(object sender, EventArgs e)
         {
             if (Title == "Vaistai")
             {
-
+                await Navigation.PushAsync(new Views.PatientInfoPages.Medicines());
+            }
+            else if (Title == "Tyrimai")
+            {
+                await Navigation.PushAsync(new Views.PatientInfoPages.Examinations());
+            }
+            else if (Title == "Ligos")
+            {
+                await Navigation.PushAsync(new Views.PatientInfoPages.Diseases());
+            }
+            else if (Title == "Alergijos")
+            {
+                await Navigation.PushAsync(new Views.PatientInfoPages.Allergies());
+            }
+            else if (Title == "Skiepai")
+            {
+                await Navigation.PushAsync(new Views.PatientInfoPages.Vaccines());
             }
         }
     }

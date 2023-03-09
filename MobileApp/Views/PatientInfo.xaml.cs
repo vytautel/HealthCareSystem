@@ -16,5 +16,17 @@ namespace MobileApp
         {
             InitializeComponent();
         }
+        protected override async void OnAppearing()
+        {
+            try
+            {
+                base.OnAppearing();
+                // get name of first patient in a database
+                var list = await App.MyDatabase.ReadPatients();
+                patientName.Text = "Esate prisijungę kaip: " + list[0].Name + " " + list[0].Surname;
+
+            }
+            catch { }
+        }
     }
 }

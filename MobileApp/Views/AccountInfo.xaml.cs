@@ -26,13 +26,14 @@ namespace MobileApp
                 base.OnAppearing();
                 // get name of first patient in a database
                 var list = await App.MyDatabase.ReadPatients();
-                patientId.Text = (await App.MyDatabase.ReadPatients())[0].Id.ToString();
-                patientName.Text = (await App.MyDatabase.ReadPatients())[0].Name;
-                patientSurname.Text = (await App.MyDatabase.ReadPatients())[0].Surname;
-                patientEmail.Text = (await App.MyDatabase.ReadPatients())[0].Email;
-                patientAdress.Text = (await App.MyDatabase.ReadPatients())[0].Address;
-                patientPhone.Text = (await App.MyDatabase.ReadPatients())[0].Phone;
-                patientBirthDate.Text = (await App.MyDatabase.ReadPatients())[0].BirthDate;
+                Patients p = list[0];
+                patientId.Text = p.Id.ToString();
+                patientName.Text = p.Name;
+                patientSurname.Text = p.Surname;
+                patientEmail.Text = p.Email;
+                patientAdress.Text = p.Address;
+                patientPhone.Text = p.Phone;
+                patientBirthDate.Text = p.BirthDate;
 
             }
             catch { }
@@ -48,20 +49,7 @@ namespace MobileApp
             p.Address = patientAdress.Text;
             p.Phone = patientPhone.Text;
             p.BirthDate = patientBirthDate.Text;
-           // await Shell.Current.GoToAsync(new AccountInfoEdit(p, this));
             await Navigation.PushAsync(new AccountInfoEdit(p, this));
-
-            /*patientAdress.IsEnabled = true;
-
-            Patients p = new Patients();
-            p.Name = patientName.Text;
-            p.Surname = patientSurname.Text;
-            p.Email = patientEmail.Text;
-            p.Address = patientAdress.Text;
-            p.Phone = patientPhone.Text;
-            p.BirthDate = patientBirthDate.Text;
-
-            await App.MyDatabase.UpdatePatient(p);*/
         }
     }
 }
