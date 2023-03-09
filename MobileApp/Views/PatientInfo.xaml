@@ -15,7 +15,7 @@
                        FontSize="20"
                        VerticalOptions="Start"
                        HorizontalOptions="EndAndExpand"
-                       Margin="5,10,10,30"/>
+                       Margin="5,10,10,30" />
 
                 <!-- info selection cards -->
                 <Grid BindingContext="Control:PatientInfoCard"
