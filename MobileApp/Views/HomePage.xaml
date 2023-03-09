@@ -5,37 +5,36 @@
              xmlns:local="clr-namespace:MobileApp.Components"
              x:Class="MobileApp.HomePage">
     <ContentPage.Content>
-        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-            <StackLayout HorizontalOptions="FillAndExpand"  >
+        <ContentView>
+            <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <StackLayout HorizontalOptions="FillAndExpand" >
 
 
-            <Label  Grid.Column ="1"  x:Name ="patientSurname" FontAttributes="Bold" FontSize="22" 
-                    Text="Trumpa savaitės simptomų suvestinė"
-                        VerticalOptions="Start" 
-                        HorizontalOptions="Center" />
+                    <Label  Grid.Column ="1"  x:Name ="patientSurname" FontAttributes="Bold" FontSize="22"
+                            Text="Trumpa savaitės simptomų suvestinė"
+                            VerticalOptions="Start"
+                            HorizontalOptions="Center" />
 
-                <Button Text="Pridėti simptomą" Clicked="OnAddSymptomClicked" />
+                    <Button Text="Pridėti simptomą" Clicked="OnAddSymptomClicked" />
 
-
-                <ScrollView VerticalOptions="FillAndExpand">
+                    <ScrollView VerticalOptions="FillAndExpand">
                         <!-- Dynamic elements -->
-                    <StackLayout x:Name="SymptomCardsLayout" VerticalOptions="FillAndExpand">
-                        <local:SymptomCard Title="Card Title" Body="Card Body Text" />
-                    </StackLayout>
+                        <StackLayout x:Name="SymptomCardsLayout" VerticalOptions="FillAndExpand">
+                            <local:SymptomCard Title="Card Title" Body="Card Body Text" />
+                        </StackLayout>
+                    </ScrollView>
 
-                </ScrollView>
+                    <Entry Placeholder="Simptomas" Text="{Binding SymptomName}" ></Entry>
+                    <Button Text="Pridėti" Command="{Binding AddSymptomCommand}"></Button>
 
-                <!-- Dažniausias simptomas -->
-            <!-- Stipriausias simptomas -->
-            <!-- Ilgiausias besitęsiantis simptomas -->
-            <!-- Viso skirtingų simptomų šią savaitę -->
+                    <!-- Dažniausias simptomas -->
+                    <!-- Stipriausias simptomas -->
+                    <!-- Ilgiausias besitęsiantis simptomas -->
+                    <!-- Viso skirtingų simptomų šią savaitę -->
 
-              <!--  <ListView x:Name="myListView" /> -->
-
-                <Entry Placeholder="Simptomas" Text="{Binding SymptomName}"></Entry>
-            <Button Text="Pridėti" Command="{Binding AddSymptomCommand}"></Button>
-
-            </StackLayout>
-        </ScrollView>
+                    <!--  <ListView x:Name="myListView" /> -->
+                </StackLayout>
+            </ScrollView>
+        </ContentView>
     </ContentPage.Content>
 </ContentPage>

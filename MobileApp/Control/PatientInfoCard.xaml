@@ -2,19 +2,30 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileApp.Control.PatientInfoCard">
-  <ContentView.Content>
-        <StackLayout Background="green" Padding="10" >
-            <StackLayout Margin="10,10,10,0" BackgroundColor="gray">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Text="{Binding Title}" FontAttributes="Bold" VerticalOptions="Center" />
-                    <Label Grid.Column="1" Text="{Binding Title}" FontAttributes="Bold" VerticalOptions="Center" />
-                </Grid>
-                <Label Text="{Binding Description}" Margin="10,5,10,10" VerticalOptions="CenterAndExpand" />
-            </StackLayout>
+
+   <!-- <ContentView.Content>
+        <Button Image="{Binding Icon}" Text="{Binding Title}" Clicked="ClickEvent" HeightRequest="10"  WidthRequest="10" />
+
+
+        <StackLayout Margin="0" BackgroundColor="gray">
+            <Grid>
+                <Image Grid.Column="0" Grid.Row="0" Source="{Binding Icon}" VerticalOptions="Center" />
+                <Label Grid.Column="0" Grid.Row="1" Text="{Binding Title}" FontAttributes="Bold" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+            </Grid>
         </StackLayout>
-  </ContentView.Content>
+    </ContentView.Content>-->
+
+    <StackLayout>
+        <ImageButton Source="{Binding Icon}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
+                     HeightRequest="100"/>
+
+        <Label Text="{Binding Title}"
+               FontSize="22"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+    </StackLayout>
+
 </ContentView>

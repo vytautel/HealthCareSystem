@@ -60,13 +60,13 @@
 
                 <!-- -->
 
-                    <Grid Margin="10" Grid.Row="6" Grid.ColumnSpan="2" RowSpacing="10" ColumnSpacing="10"
+                    <Grid BindingContext="Control:PatientInfoCard" Margin="10" Grid.Row="6" Grid.ColumnSpan="2" RowSpacing="10" ColumnSpacing="10"
                           x:DataType="Control:PatientInfoCard">
-                        <Control:PatientInfoCard Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Title="Vaistai"/>
-                        <Control:PatientInfoCard Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" Title="Tyrimai" />
-                        <Control:PatientInfoCard Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  Title="Ligos"/>
-                        <Control:PatientInfoCard Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Title="Alergijos"/>
-                        <Control:PatientInfoCard Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2"  Title="Skiepai"/>
+                        <Control:PatientInfoCard Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Title="Vaistai" Icon="Account.png"/>
+                        <Control:PatientInfoCard Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" Title="Tyrimai" Icon="Account.png" />
+                        <Control:PatientInfoCard Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  Title="Ligos" Icon="Account.png"/>
+                        <Control:PatientInfoCard Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Title="Alergijos" Icon="Account.png"/>
+                        <Control:PatientInfoCard Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2"  Title="Alergijos" Icon="Account.png" />
                     </Grid>
 
                 </Grid>

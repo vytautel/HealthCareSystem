@@ -41,6 +41,15 @@ namespace MobileApp.Control
         public PatientInfoCard()
         {
             InitializeComponent();
+            BindingContext = this;
+        }
+
+        private void ClickEvent(object sender, EventArgs e)
+        {
+            if (Title == "Vaistai")
+            {
+
+            }
         }
     }
 
