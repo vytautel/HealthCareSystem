@@ -5,7 +5,7 @@ using SQLite;
 
 namespace MobileApp.Models
 {
-    public class Patients
+    public class Pacients
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

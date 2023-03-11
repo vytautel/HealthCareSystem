@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -38,15 +39,65 @@ namespace MobileApp.Control
             set => SetValue(TitleProperty, value);
         }
 
-        public SymptomCard()
+        public List<Symptoms> Sympt;
+        private List<string> symptoms = new List<string>()
+        {
+            "Fever",
+            "Cough",
+            "Fatigue",
+            "Headache",
+            "Loss of smell or taste"
+        };
+
+        public SymptomCard() { }
+        public SymptomCard(int nr = 1)
         {
             InitializeComponent();
             BindingContext = this;
-        }
+            SymptomSearchResults.ItemsSource = symptoms;
 
+            SymptomNr.Text = "Simptomas #" + nr.ToString();
+        }
+       
         async private void SymptomTapEvent(object sender, EventArgs e)
         {
             
+        }
+
+        private async void OnSymptomSearchInput(object sender, EventArgs e)
+        {
+            SymptomSearchResults.IsVisible = true;
+
+            Sympt = await App.MyDatabase.ReadSymptoms();
+
+            string searchTerm = symptomsSearch.Text;
+
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                SymptomSearchResults.ItemsSource = Sympt;
+            }
+            else
+            {
+                List<Symptoms> filteredSymptoms = Sympt.Where(s => s.Name.ToLower().Contains(searchTerm.ToLower())).ToList();
+                SymptomSearchResults.ItemsSource = filteredSymptoms;
+            }
+        }
+
+        private void SymptomSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            // Nothing is selected
+            if (e.SelectedItem == null)
+            {
+                return;
+            }
+
+            // Do something with the selected item
+            Symptoms selectedSymptom = (Symptoms)e.SelectedItem;
+            symptomsSearch.Text = selectedSymptom.Name;
+            SymptomSearchResults.IsVisible = false;
+
+            // Clear the selection
+            SymptomSearchResults.SelectedItem = null;
         }
     }
 }

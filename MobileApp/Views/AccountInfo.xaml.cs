@@ -26,7 +26,7 @@ namespace MobileApp
                 base.OnAppearing();
                 // get name of first patient in a database
                 var list = await App.MyDatabase.ReadPatients();
-                Patients p = list[0];
+                Pacients p = list[0];
                 patientId.Text = p.Id.ToString();
                 patientName.Text = p.Name;
                 patientSurname.Text = p.Surname;
@@ -41,7 +41,7 @@ namespace MobileApp
 
         async void EditPatient_Clicked(object sender, EventArgs e)
         {
-            Patients p = new Patients();
+            Pacients p = new Pacients();
             p.Id = int.Parse(patientId.Text);
             p.Name = patientName.Text;
             p.Surname = patientSurname.Text;

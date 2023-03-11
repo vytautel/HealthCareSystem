@@ -13,9 +13,9 @@ namespace MobileApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AccountInfoEdit : ContentPage
     {
-        Patients patient;
+        Pacients patient;
         AccountInfo AccountInfoPage;
-        public AccountInfoEdit(Patients p, AccountInfo page)
+        public AccountInfoEdit(Pacients p, AccountInfo page)
         {
             InitializeComponent();
             patientName.Text = p.Name;

@@ -12,11 +12,13 @@
 
   <ItemGroup>
     <None Remove="healthcare6.db" />
+    <None Remove="healthcareDB.db" />
     <None Remove="patients.db" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="healthcare6.db" />
+    <EmbeddedResource Include="healthcareDB.db" />
     <EmbeddedResource Include="patients.db" />
   </ItemGroup>
 
