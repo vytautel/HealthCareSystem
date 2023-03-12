@@ -89,7 +89,8 @@ namespace MobileApp.Control
        
         private void SymptomTapEvent(object sender, EventArgs e)
         {
-            (sender as Frame).HasShadow = true;
+            SymptomCardFrame.HasShadow = true;
+            SymptomCardFrame.CornerRadius = 10;
         }
         private void OnSymptomSearchInputUnfocused(object sender, EventArgs e)
         {
@@ -134,11 +135,12 @@ namespace MobileApp.Control
 
         private void OnRemoveClicked(object sender, EventArgs e)
         {
+            //HomePage.SymptomCardsLayout.Children.Insert(0, newElement);
             // e.this = null;
-           /* Button button = (Button)sender;
-            MyItem item = (MyItem)button.CommandParameter;
-            myStackLayout.Children.Remove(item);*/
-           // ir sumazinti simptomo skaiciuka (arba nereik, nes jis kitaip pasiduos)
+            /* Button button = (Button)sender;
+             MyItem item = (MyItem)button.CommandParameter;
+             myStackLayout.Children.Remove(item);*/
+            // ir sumazinti simptomo skaiciuka (arba nereik, nes jis kitaip pasiduos)
         }
     }
 }

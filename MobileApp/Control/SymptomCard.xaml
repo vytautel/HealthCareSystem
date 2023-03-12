@@ -4,7 +4,8 @@
              x:Class="MobileApp.Control.SymptomCard">
 
     <Frame CornerRadius="8"
-           Margin="20,15,20,15">
+           Margin="20,15,20,15"
+           x:Name="SymptomCardFrame">
         <Frame.GestureRecognizers>
             <TapGestureRecognizer Tapped="SymptomTapEvent" />
         </Frame.GestureRecognizers>
@@ -36,8 +37,7 @@
                        FontAttributes="Italic"
                        TextChanged="OnSymptomSearchInput"
                        Focused="OnSymptomSearchInput"
-                       Unfocused="OnSymptomSearchInputUnfocused"
-                       />
+                       Unfocused="OnSymptomSearchInputUnfocused" />
             <ListView x:Name="SymptomSearchResults"
                       HeightRequest="100"
                       ItemsSource="{Binding Symptoms}"
@@ -60,7 +60,9 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Label Margin="1,25,0,0" Text="Stiprumas" FontSize="Body" />
+            <Label Margin="1,25,0,0"
+                   Text="Stiprumas"
+                   FontSize="Body" />
 
             <Image x:Name="IntensityImg"
                    HeightRequest="40" />
@@ -71,7 +73,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Slider Grid.Column="0"
-                    x:Name="IntensityLevelSlider"
+                        x:Name="IntensityLevelSlider"
                         ThumbColor="red"
                         HeightRequest="30"
                         Maximum="10"
@@ -79,16 +81,11 @@
                         Value="{Binding IntensityLevel}"
                         MaximumTrackColor="Red"
                         MinimumTrackColor="Green" />
-                <Label x:Name="IntensityLevelLabel" Grid.Column="1" FontSize="Body"
+                <Label x:Name="IntensityLevelLabel"
+                       Grid.Column="1"
+                       FontSize="Body"
                        Text="10" />
             </Grid>
-
-            <!--<Label x:Name="IntensityLevel"
-                       Text="{Binding Source={x:Reference slider},
-                              Path=Value,
-                              StringFormat='The Slider value is {0:F0}'}"
-                       HorizontalOptions="Center"
-                       VerticalOptions="CenterAndExpand" /> -->
         </StackLayout>
     </Frame>
 </ContentView>
