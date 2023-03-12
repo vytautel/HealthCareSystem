@@ -20,7 +20,7 @@
                        VerticalOptions="Center" />
                 <ImageButton Grid.Column="1"
                              Source="Trash.png"
-                             Clicked="OnRemoveClicked"    
+                             Clicked="OnRemoveClicked"
                              HeightRequest="40"
                              HorizontalOptions="End" />
             </Grid>
@@ -57,8 +57,24 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Label x:Name="SymptomIntensity"
-                   Text="Stiprumas" />
+            <Label Text="Stiprumas" />
+            <StackLayout>
+                <Image x:Name="IntensityImg"
+                       HeightRequest="40" />
+                <Slider x:Name="IntensityLevelSlider"
+                        ThumbColor="red"
+                        HeightRequest="30"
+                        Maximum="10"
+                        Minimum="1"
+                        Value="{Binding IntensityLevel}" />
+
+                <!--<Label x:Name="IntensityLevel"
+                       Text="{Binding Source={x:Reference slider},
+                              Path=Value,
+                              StringFormat='The Slider value is {0:F0}'}"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand" /> -->
+            </StackLayout>
         </StackLayout>
     </Frame>
 </ContentView>

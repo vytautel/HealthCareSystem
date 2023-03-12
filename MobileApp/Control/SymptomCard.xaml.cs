@@ -7,6 +7,7 @@ using System.Linq;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.ComponentModel;
 
 namespace MobileApp.Control
 {
@@ -49,12 +50,35 @@ namespace MobileApp.Control
             "Loss of smell or taste"
         };
 
+        private int _intensityLevel;
+        public int IntensityLevel
+        {
+            get { return _intensityLevel; }
+            set
+            {
+                _intensityLevel = value;
+                string imgSource = "face5.png";
+                if (_intensityLevel <= 2)
+                    imgSource = "face1.png";
+                else if (_intensityLevel <= 4)
+                    imgSource = "face2.png";
+                else if (_intensityLevel <= 6)
+                    imgSource = "face3.png";
+                else if (_intensityLevel <= 8)
+                    imgSource = "face4.png";
+
+                IntensityImg.Source = imgSource;
+            }
+        }
+
         public SymptomCard() { }
         public SymptomCard(int nr = 1)
         {
             InitializeComponent();
             BindingContext = this;
             SymptomSearchResults.ItemsSource = symptoms;
+            IntensityLevel = 3;
+            IntensityLevelSlider.Value = IntensityLevel;
 
             SymptomNr.Text = "Simptomas #" + nr.ToString();
         }
