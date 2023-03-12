@@ -8,6 +8,7 @@ using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.ComponentModel;
+using UIKit;
 
 namespace MobileApp.Control
 {
@@ -68,6 +69,7 @@ namespace MobileApp.Control
                     imgSource = "face4.png";
 
                 IntensityImg.Source = imgSource;
+                IntensityLevelLabel.Text = _intensityLevel.ToString();
             }
         }
 
@@ -79,13 +81,19 @@ namespace MobileApp.Control
             SymptomSearchResults.ItemsSource = symptoms;
             IntensityLevel = 3;
             IntensityLevelSlider.Value = IntensityLevel;
+            IntensityLevelLabel.Text = IntensityLevel.ToString();
 
             SymptomNr.Text = "Simptomas #" + nr.ToString();
+            SymptomSearchResults.IsVisible = false;
         }
        
-        async private void SymptomTapEvent(object sender, EventArgs e)
+        private void SymptomTapEvent(object sender, EventArgs e)
         {
-            
+            (sender as Frame).HasShadow = true;
+        }
+        private void OnSymptomSearchInputUnfocused(object sender, EventArgs e)
+        {
+            SymptomSearchResults.IsVisible = false;
         }
 
         private async void OnSymptomSearchInput(object sender, EventArgs e)

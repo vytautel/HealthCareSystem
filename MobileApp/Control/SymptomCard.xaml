@@ -34,7 +34,10 @@
                        HorizontalTextAlignment="Center"
                        FontSize="Medium"
                        FontAttributes="Italic"
-                       TextChanged="OnSymptomSearchInput" />
+                       TextChanged="OnSymptomSearchInput"
+                       Focused="OnSymptomSearchInput"
+                       Unfocused="OnSymptomSearchInputUnfocused"
+                       />
             <ListView x:Name="SymptomSearchResults"
                       HeightRequest="100"
                       ItemsSource="{Binding Symptoms}"
@@ -57,24 +60,35 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Label Text="Stiprumas" />
-            <StackLayout>
-                <Image x:Name="IntensityImg"
-                       HeightRequest="40" />
-                <Slider x:Name="IntensityLevelSlider"
+            <Label Margin="1,25,0,0" Text="Stiprumas" FontSize="Body" />
+
+            <Image x:Name="IntensityImg"
+                   HeightRequest="40" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Slider Grid.Column="0"
+                    x:Name="IntensityLevelSlider"
                         ThumbColor="red"
                         HeightRequest="30"
                         Maximum="10"
                         Minimum="1"
-                        Value="{Binding IntensityLevel}" />
+                        Value="{Binding IntensityLevel}"
+                        MaximumTrackColor="Red"
+                        MinimumTrackColor="Green" />
+                <Label x:Name="IntensityLevelLabel" Grid.Column="1" FontSize="Body"
+                       Text="10" />
+            </Grid>
 
-                <!--<Label x:Name="IntensityLevel"
+            <!--<Label x:Name="IntensityLevel"
                        Text="{Binding Source={x:Reference slider},
                               Path=Value,
                               StringFormat='The Slider value is {0:F0}'}"
                        HorizontalOptions="Center"
                        VerticalOptions="CenterAndExpand" /> -->
-            </StackLayout>
         </StackLayout>
     </Frame>
 </ContentView>
