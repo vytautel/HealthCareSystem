@@ -22,36 +22,36 @@
                     <!-- Stipriausias simptomas -->
                     <!-- Ilgiausias besitęsiantis simptomas -->
                     <!-- Viso skirtingų simptomų šią savaitę -->
-                    <Grid BindingContext="Control:PatientInfoCard"
+                    <Grid BindingContext="Control:StatisticsCard"
                           Margin="10,10,10,20"
                           Grid.Row="6"
                           Grid.ColumnSpan="2"
                           RowSpacing="10"
                           ColumnSpacing="10"
-                          x:DataType="Control:PatientInfoCard">
-                        <Control:PatientInfoCard Grid.Row="0"
-                                                 Grid.Column="0"
-                                                 Grid.ColumnSpan="3"
-                                                 Title="Dažniausias"
-                                                 Icon="Medicine.png" />
-                        <Control:PatientInfoCard Grid.Row="0"
-                                                 Grid.Column="3"
-                                                 Grid.ColumnSpan="3"
-                                                 Title="Stipriausias"
-                                                 Icon="Examinations.png" />
-                        <Control:PatientInfoCard Grid.Row="1"
-                                                 Grid.Column="0"
-                                                 Grid.ColumnSpan="3"
-                                                 Title="Ilgiausiai besitęsiantis"
-                                                 Icon="Disease.png" />
-                        <Control:PatientInfoCard Grid.Row="1"
-                                                 Grid.Column="3"
-                                                 Grid.ColumnSpan="3"
-                                                 Title="Viso skirtingų simptomų"
-                                                 Icon="Allergies.png" />
+                          x:DataType="Control:StatisticsCard">
+                        <Control:StatisticsCard Grid.Row="0"
+                                                Grid.Column="0"
+                                                Grid.ColumnSpan="3"
+                                                Title="Dažniausias"
+                                                Icon="MostCommonSymptom.png"
+                                                Value="Galvos skausmas (4)" />
+                        <Control:StatisticsCard Grid.Row="0"
+                                                Grid.Column="3"
+                                                Grid.ColumnSpan="3"
+                                                Title="Stipriausias"
+                                                Icon="StrongestSymptom.png"
+                                                Value="Gerklės skausmas" />
+                        <Control:StatisticsCard Grid.Row="1"
+                                                Grid.Column="0"
+                                                Grid.ColumnSpan="6"
+                                                Title="Viso skirtingų simptomų"
+                                                Icon="TotalSymptoms.png"
+                                                Value="13" />
                     </Grid>
 
-                    <Button Text="Pridėti simptomą" Margin="20,0,20,0" CornerRadius="4"
+                    <Button Text="Pridėti simptomą"
+                            Margin="20,0,20,0"
+                            CornerRadius="4"
                             Clicked="OnAddSymptomClicked" />
 
                     <ScrollView VerticalOptions="FillAndExpand">

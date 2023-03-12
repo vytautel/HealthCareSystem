@@ -99,5 +99,14 @@ namespace MobileApp.Control
             // Clear the selection
             SymptomSearchResults.SelectedItem = null;
         }
+
+        private void OnRemoveClicked(object sender, EventArgs e)
+        {
+            // e.this = null;
+           /* Button button = (Button)sender;
+            MyItem item = (MyItem)button.CommandParameter;
+            myStackLayout.Children.Remove(item);*/
+           // ir sumazinti simptomo skaiciuka (arba nereik, nes jis kitaip pasiduos)
+        }
     }
 }

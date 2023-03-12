@@ -104,6 +104,10 @@
     <AndroidResource Include="Resources\drawable\Disease.png" />
     <AndroidResource Include="Resources\drawable\Examinations.png" />
     <AndroidResource Include="Resources\drawable\Vaccines.png" />
+    <AndroidResource Include="Resources\drawable\MostCommonSymptom.png" />
+    <AndroidResource Include="Resources\drawable\StrongestSymptom.png" />
+    <AndroidResource Include="Resources\drawable\TotalSymptoms.png" />
+    <AndroidResource Include="Resources\drawable\Trash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -3,12 +3,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileApp.Control.SymptomCard">
 
-    <Frame CornerRadius="8" Margin="20,15,20,15">
+    <Frame CornerRadius="8"
+           Margin="20,15,20,15">
         <Frame.GestureRecognizers>
             <TapGestureRecognizer Tapped="SymptomTapEvent" />
         </Frame.GestureRecognizers>
         <StackLayout>
-            <Label x:Name="SymptomNr" FontSize="24" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0"
+                       x:Name="SymptomNr"
+                       FontSize="24"
+                       VerticalOptions="Center" />
+                <ImageButton Grid.Column="1"
+                             Source="Trash.png"
+                             Clicked="OnRemoveClicked"    
+                             HeightRequest="40"
+                             HorizontalOptions="End" />
+            </Grid>
+
             <SearchBar x:Name="symptomsSearch"
                        Placeholder="Įveskite simptomą..."
                        CancelButtonColor="DarkGray"
@@ -25,28 +41,24 @@
                       SelectionMode="Single"
                       ItemSelected="SymptomSelected">
                 <ListView.ItemTemplate>
-                    <DataTemplate >
+                    <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="5">
-                                <Label Padding="5" Text="{Binding Name}"
+                                <Label Padding="5"
+                                       Text="{Binding Name}"
                                        FontAttributes="Bold" />
-                                <Label IsVisible="false" Text="{Binding Id}"
+                                <Label IsVisible="false"
+                                       Text="{Binding Id}"
                                        FontAttributes="Italic" />
-                                <Label Padding="5" Text="{Binding Description}" />
+                                <Label Padding="5"
+                                       Text="{Binding Description}" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Label x:Name="SymptomIntensity" Text="Stiprumas" />
-            <!--<CollectionView ItemsSource="{Binding Symptoms}"
-                            x:Name="SymtpomSearchResults">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Label BindingContext="{Binding Name}" />
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>-->
+            <Label x:Name="SymptomIntensity"
+                   Text="Stiprumas" />
         </StackLayout>
     </Frame>
 </ContentView>
